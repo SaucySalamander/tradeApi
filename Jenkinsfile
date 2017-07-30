@@ -4,8 +4,12 @@ pipeline {
     stage('pre-build-checks') {
       steps {
         validateDeclarativePipeline 'Jenkinsfile'
-        isUnix()
-        sh 'pwd'
+        if(isUnix()){
+            println 'Is current env Unix like: passed'
+        }
+        if(pwd(tmp)){
+         println 'hello'
+        }
       }
     }
     stage('pre-build') {
