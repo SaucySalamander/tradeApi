@@ -4,7 +4,7 @@ pipeline {
     stage('pre-build-checks') {
       steps {
         validateDeclarativePipeline 'Jenkinsfile'
-        isUnix(println 'passed')
+        isUnix()
         sh 'pwd'
       }
     }
