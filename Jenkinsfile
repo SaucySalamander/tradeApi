@@ -5,8 +5,7 @@ pipeline {
             steps {
                 sh './gradlew clean'
                 sh './gradlew build'
-                sh 'cd ./build/libs'
-                sh 'ls -la'
+                sh 'ls -la ./build/libs'
             }
         }
     }
