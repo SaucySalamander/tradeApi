@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh 'hostname'
                 sh 'pwd'
-                sh 'gradle --version'
+                sh 'ls -l'
             }
         }
     }
