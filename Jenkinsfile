@@ -1,12 +1,17 @@
 pipeline {
   agent any
   stages {
-    stage('pre-build') {
+    stage('pre-build-checks') {
       steps {
-        isUnix()
-        pwd()
         validateDeclarativePipeline 'Jenkinsfile'
+        isUnix(println isUnix())
+        sh 'pwd'
       }
+    }
+    stage('pre-build') {
+       steps {
+         sh './gradlew clean'
+       }
     }
     stage('build') {
       steps {
