@@ -3,9 +3,10 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'hostname'
-                sh 'pwd'
-                sh 'ls -l'
+                sh './gradlew clean'
+                sh './gradlew build'
+                sh 'cd ./build/libs'
+                sh 'ls -la'
             }
         }
     }
