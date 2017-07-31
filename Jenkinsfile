@@ -8,6 +8,16 @@ pipeline {
         sh 'pwd'
       }
     }
+    stage('pre-build'){
+        steps {
+            sh './gradlew clean'
+        }
+    }
+    stage('build-jar'){
+        steps{
+            sh './gradlew build'
+        }
+    }
     stage('build image') {
        steps {
         script{
