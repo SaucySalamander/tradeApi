@@ -29,9 +29,13 @@ pipeline {
         }
        }
     }
-    stage 'publish image'
-    docker.withRegistry("https://registry.hub.docker.com", docker-hub-creds) {
-      app.push('0.1')
+    stage('publish image'){
+    steps{
+        docker.withRegistry("https://registry.hub.docker.com", docker-hub-creds) {
+
+            app.push('0.1')
+            }
+        }
     }
     stage('post-build-checks') {
       steps {
