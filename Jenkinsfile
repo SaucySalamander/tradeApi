@@ -1,5 +1,4 @@
 pipeline {
-    def workspace = pwd();
   agent any
   stages {
     stage('pre-build-checks') {
@@ -7,7 +6,7 @@ pipeline {
         validateDeclarativePipeline 'Jenkinsfile'
         isUnix()
         script{
-            if(workspace == "/tmp"){
+            if(true){
                 println 'hello'
             }
         }
