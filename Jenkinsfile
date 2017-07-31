@@ -11,7 +11,7 @@ pipeline {
     stage('build image') {
        steps {
         script{
-            app = docker.build("./")
+            app = docker.build("saucysalamander/tradeapi")
         }
        }
     }
