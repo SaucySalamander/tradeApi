@@ -15,8 +15,9 @@ pipeline {
     }
     stage('build-jar'){
         steps{
-            sh 'ls -la ./build/lib'
+
             sh './gradlew build'
+            sh 'ls -la ./build/lib'
             sh 'pwd'
         }
     }
