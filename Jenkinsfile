@@ -15,11 +15,14 @@ pipeline {
     }
     stage('build-jar'){
         steps{
+            sh 'ls -la ./build/lib'
             sh './gradlew build'
+            sh 'pwd'
         }
     }
     stage('build image') {
        steps {
+       sh 'pwd'
         script{
             app = docker.build("saucysalamander/tradeapi")
         }
