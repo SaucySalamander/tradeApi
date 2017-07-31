@@ -10,6 +10,6 @@ RUN pwd
 ENV BUILDDIR "build/libs/tradeApi-0.0.1-SNAPSHOT.jar"
 ENV DIRPATH "/var/jenkins_home/workspace/ySalamander_tradeApi_master-VVKNHORLK3AWHDLWX2Q6P374CTHZRAEM7NGR435LFR6PK476FTTQ"
 
-ADD $DIRPATH/$BUILDDIR app.jar
+ADD $BUILDDIR app.jar
 ENV JAVA_OPTS=""
 ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]

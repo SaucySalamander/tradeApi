@@ -25,7 +25,7 @@ pipeline {
        steps {
        sh 'pwd'
         script{
-            app = docker.build("saucysalamander/tradeapi")
+            app = docker.build("saucysalamander/tradeapi", "/var/jenkins_home/workspace/ySalamander_tradeApi_master-VVKNHORLK3AWHDLWX2Q6P374CTHZRAEM7NGR435LFR6PK476FTTQ")
         }
        }
     }
