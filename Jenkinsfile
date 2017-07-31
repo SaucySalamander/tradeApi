@@ -17,7 +17,7 @@ pipeline {
         steps{
 
             sh './gradlew build'
-            sh 'ls -la ./build/lib'
+
             sh 'pwd'
         }
     }
