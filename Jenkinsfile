@@ -5,7 +5,7 @@ pipeline {
       steps {
         validateDeclarativePipeline 'Jenkinsfile'
         isUnix()
-        pwd()
+        sh 'pwd'
       }
     }
     stage('pre-build') {
