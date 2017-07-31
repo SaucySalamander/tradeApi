@@ -5,11 +5,7 @@ pipeline {
       steps {
         validateDeclarativePipeline 'Jenkinsfile'
         isUnix()
-        script{
-            if(true){
-                println 'hello'
-            }
-        }
+        pwd()
       }
     }
     stage('pre-build') {
