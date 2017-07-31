@@ -31,10 +31,12 @@ pipeline {
     }
     stage('publish image'){
     steps{
+        script{
         docker.withRegistry("https://registry.hub.docker.com", docker-hub-creds) {
 
             app.push('0.1')
             }
+        }
         }
     }
     stage('post-build-checks') {
