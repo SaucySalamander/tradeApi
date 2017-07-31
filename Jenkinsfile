@@ -8,14 +8,15 @@ pipeline {
         sh 'pwd'
       }
     }
-    stage('pre-build') {
+    stage('build image') {
        steps {
-         sh './gradlew clean'
+         app = docker.build("./")
        }
     }
-    stage('build') {
+    stage('publish image') {
       steps {
-        sh './gradlew build'
+        docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-creds')
+        app.push('0.1')
       }
     }
     stage('post-build-checks') {
